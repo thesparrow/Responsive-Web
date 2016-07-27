@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Content and Navigation Styling</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+</head>
+
+<body>
+    <nav class="clearfix">
+        <ul class="clearfix">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">How-to</a>
+            </li>
+            <li>
+                <a href="#">Icons</a>
+            </li>
+            <li>
+                <a href="#">Design</a>
+            </li>
+            <li>
+                <a href="#">Web</a>
+            </li>
+            <li>
+                <a href="#">Tools</a>
+            </li>
+        </ul>
+        <a href="#" id="pull">MENU</a>
+    </nav>
+</body>
+<script type="text/javascript">
+$(function() {
+    var pull = $('#pull');
+    menu = $('nav ul');
+    menuHeight = menu.height();
+
+    $(pull).on('click', function(event) {
+        /* Act on the event */
+        event.preventDefault();
+        menu.slideToggle();
+    });
+});
+//show the meany when the style is appropriate
+$(window).resize(function() {
+    var w = $(window).width();
+    if (w > 320 && menu.is(':hidden')) {
+        menu.removeAttr('style');
+    }
+});
+</script>
+
+</html>
